@@ -1,3 +1,4 @@
+import Footer from "./components/Footer/footer";
 import "./globals.css";
 import type { Metadata } from "next";
 
@@ -9,7 +10,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en">
-            <body className="bg-neutral-900">{children}</body>
+            <body className="bg-neutral-900">
+                {children}
+                <Footer />
+            </body>
         </html>
     );
 }
