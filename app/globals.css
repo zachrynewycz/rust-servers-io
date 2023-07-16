@@ -25,5 +25,11 @@
 
     .subway-bg {
         background-image: linear-gradient(45deg, #141312, rgba(20, 19, 18, 0)), url("/images/ferryterminal_05.jpg");
+        background-repeat: no-repeat;
     }
+
+    /* .subway-bg {
+        background-image: linear-gradient(45deg, #141312, rgba(20, 19, 18, 0)), url("/images/ferryterminal_05.jpg");
+        background-repeat: no-repeat;
+    } */
 }
