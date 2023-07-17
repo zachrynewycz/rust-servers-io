@@ -1,6 +1,9 @@
+"use client";
 import Footer from "./components/Footer/footer";
 import "./globals.css";
 import type { Metadata } from "next";
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
 
 export const metadata: Metadata = {
     title: "rustservers.io",
@@ -11,8 +14,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang="en">
             <body className="bg-neutral-900">
-                {children}
-                <Footer />
+                <Provider store={store}>
+                    {children}
+                    <Footer />
+                </Provider>
             </body>
         </html>
     );

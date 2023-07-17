@@ -27,19 +27,19 @@ const ServerCard = ({ data, index }: IServerCardProps) => {
         <motion.div
             {...animationProps}
             ref={ref}
-            className="bg-[#1f1f1f] px-7 py-4 text-white cursor-pointer flex flex-col justify-around h-60 border-4 border-neutral-800"
+            className="bg-[#1f1f1f] px-8 py-4 text-stone-200 cursor-pointer flex flex-col justify-around h-64 border-neutral-800"
         >
-            <h1 className="font-bebas font-bold text-5xl text-white">
+            <h1 className="font-bebas font-bold text-5xl ">
                 {data.attributes.players} / {data.attributes.maxPlayers}
             </h1>
 
-            <h2 className="font-open_semi">{data.attributes.name}</h2>
+            <div>
+                <h2 className="font-open_semi">{data.attributes.name}</h2>
 
-            <div className="flex items-center gap-2">
-                <img src="/images/icons/refresh-cw.svg" className="w-5" />
-                <h3 className="font-open_semi text-orange-600 text-sm">
-                    {formatWipeDate(data.attributes.details.rust_last_wipe)}
-                </h3>
+                <div className="flex items-center gap-2 mt-3 bg-orange-800 w-fit px-3 rounded-full">
+                    <img src="/images/icons/refresh-cw.svg" className="w-4" />
+                    <p className="font-bebas text-lg">{formatWipeDate(data.attributes.details.rust_last_wipe)}</p>
+                </div>
             </div>
         </motion.div>
     );

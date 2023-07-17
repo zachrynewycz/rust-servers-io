@@ -12,8 +12,7 @@ export default async function getPopularRustServers(): Promise<any> {
     try {
         const response = await fetch(url, {
             headers: {
-                Authorization:
-                    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6IjQ0NGE0ZTcyNGQ0Y2JiMjYiLCJpYXQiOjE2ODk0NjA3NTksIm5iZiI6MTY4OTQ2MDc1OSwiaXNzIjoiaHR0cHM6Ly93d3cuYmF0dGxlbWV0cmljcy5jb20iLCJzdWIiOiJ1cm46dXNlcjo3MzQ2MzIifQ.nwXBlvOiUOnAO2E6CdfpwpzyKtuvl0f2lFz3OUqyrEE",
+                Authorization: `Bearer ${process.env.BATTLEMETRICS_OAUTH}`,
             },
         });
 
@@ -25,6 +24,5 @@ export default async function getPopularRustServers(): Promise<any> {
         return data;
     } catch (error) {
         console.error(error);
-        throw error;
     }
 }
