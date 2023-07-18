@@ -1,8 +1,9 @@
 "use client";
+import { Provider } from "react-redux";
 import Footer from "./components/Footer/footer";
-import { ModalProvider } from "./context/ModalContext";
 import "./globals.css";
 import type { Metadata } from "next";
+import { store } from "./redux/store";
 
 export const metadata: Metadata = {
     title: "rustservers.io",
@@ -13,10 +14,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang="en">
             <body className="bg-neutral-900">
-                <ModalProvider>
+                <Provider store={store}>
                     {children}
                     <Footer />
-                </ModalProvider>
+                </Provider>
             </body>
         </html>
     );

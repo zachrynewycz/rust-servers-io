@@ -1,10 +1,14 @@
-export default async function getPopularRustServers(): Promise<any> {
+export default async function getRustServersByFilter(filters?: any): Promise<any> {
     const params = new URLSearchParams({
         "filter[game]": "rust",
         "filter[status]": "online",
-        sort: "-players",
-        "page[size]": "4",
-        "fields[server]": "name, ip, players, maxPlayers, details",
+        sort: filters.sortBy || "rank",
+        "page[size]": "20",
+        "filter[search]": filters.searchQuery,
+        "filter[players][max]": filters.maxPlayers || 2000,
+        "filter[players][min]": filters.minPlayers,
+        "filter[countries]": filters.countries,
+        "fields[server]": "name, ip, players, maxPlayers, details, rank, country",
     });
 
     const url = `https://api.battlemetrics.com/servers?${params.toString()}`;
@@ -12,7 +16,7 @@ export default async function getPopularRustServers(): Promise<any> {
     try {
         const response = await fetch(url, {
             headers: {
-                Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`,
+                Authorization: `Bearer `,
             },
         });
 

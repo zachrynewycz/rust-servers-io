@@ -1,15 +1,25 @@
 "use client";
-import Multiselect from "multiselect-react-dropdown";
 import { countries } from "../assets/countryData";
+
+import Multiselect from "multiselect-react-dropdown";
 import { multiSelectStyle } from "../styles/multiselect";
-import { serverTypes } from "../assets/serverTypeData";
+
+import { useDispatch } from "react-redux";
+import { setCountries, setMaxPlayers, setMinPlayers, setSearchQuery, setServerTypes } from "../redux/slices/filters";
+import { updateServerResults } from "../utils/updateServerResults";
 
 const Filters = () => {
+    const dispatch = useDispatch();
+
     return (
         <div className="mx-auto bg-neutral-800 max-w-5xl pt-4 pb-20 px-8 my-10 text-stone-200 font-gilroy_bold flex items-center gap-10 relative flex-wrap">
             <div>
                 <label htmlFor="searchQuery">Search</label>
-                <input className="bg-neutral-600 py-1 px-5" name="searchQuery" />
+                <input
+                    className="bg-neutral-600 py-1 px-5"
+                    name="searchQuery"
+                    onChange={(e) => dispatch(setSearchQuery(e.target.value))}
+                />
             </div>
 
             <div>
@@ -20,9 +30,15 @@ const Filters = () => {
                     min={0}
                     name="minValue"
                     placeholder="Min"
+                    onChange={(e) => dispatch(setMinPlayers(e.target.valueAsNumber))}
                 />
                 <span className="mx-2">to</span>
-                <input className="w-16 p-1 bg-neutral-600 text-center" type="number" placeholder="Max" />
+                <input
+                    className="w-16 p-1 bg-neutral-600 text-center"
+                    type="number"
+                    placeholder="Max"
+                    onChange={(e) => dispatch(setMaxPlayers(e.target.valueAsNumber))}
+                />
             </div>
 
             <div>
@@ -34,6 +50,8 @@ const Filters = () => {
                     showCheckbox
                     hideSelectedList
                     selectionLimit={5}
+                    onSelect={(items) => dispatch(setCountries(items))}
+                    onRemove={(items) => dispatch(setCountries(items))}
                     avoidHighlightFirstOption={true}
                     placeholder=""
                     style={multiSelectStyle}
@@ -43,9 +61,12 @@ const Filters = () => {
             <div>
                 <label htmlFor="minValue">Type</label>
                 <Multiselect
-                    options={serverTypes}
+                    options={["Offical", "Community", "Modded"]}
+                    isObject={false}
                     displayValue="name"
                     showArrow
+                    onSelect={(items) => dispatch(setServerTypes(items))}
+                    onRemove={(items) => dispatch(setCountries(items))}
                     avoidHighlightFirstOption={true}
                     hideSelectedList
                     showCheckbox
@@ -54,7 +75,10 @@ const Filters = () => {
                 />
             </div>
 
-            <button className="font-bebas text-xl bg-orange-800 px-4 py-1 absolute bottom-6 tracking-wide hover:bg-orange-900">
+            <button
+                onClick={updateServerResults}
+                className="font-bebas text-xl bg-orange-800 px-4 py-1 absolute bottom-6 tracking-wide hover:bg-orange-900"
+            >
                 search
             </button>
         </div>
