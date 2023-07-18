@@ -1,17 +1,14 @@
 "use client";
-import { toggleGroupModal } from "@/app/redux/features/uiSlice";
-import { RootState } from "@/app/redux/store";
-import { useDispatch, useSelector } from "react-redux";
+import { ModalContext } from "@/app/context/ModalContext";
+import { useContext } from "react";
 
 const GroupSizeModal = () => {
-    const dispatch = useDispatch();
-    const showModal = useSelector((state: RootState) => state.ui.showGroupModal);
-
+    const { isModalOpen, toggleModal } = useContext(ModalContext);
     const GROUP_SIZES: string[] = ["solo", "duo", "trio", "quad"];
 
     return (
         <>
-            {showModal && (
+            {isModalOpen && (
                 <div className="fixed inset-0 flex items-center justify-center">
                     <div className="absolute inset-0 bg-black opacity-40"></div>
 
@@ -25,7 +22,7 @@ const GroupSizeModal = () => {
                         </div>
 
                         <div className="flex justify-evenly font-bebas text-3xl text-neutral-800 mt-5">
-                            <button onClick={() => dispatch(toggleGroupModal())} className="text-neutral-800">
+                            <button onClick={toggleModal} className="text-neutral-800">
                                 Close
                             </button>
                             <button className="bg-orange-700 px-4 py-1 text-stone-200 tracking-wide">Search</button>

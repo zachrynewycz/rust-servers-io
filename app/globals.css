@@ -24,12 +24,21 @@
     }
 
     .subway-bg {
-        background-image: linear-gradient(45deg, #141312, rgba(20, 19, 18, 0)), url("/images/ferryterminal_05.jpg");
+        background-image: linear-gradient(45deg, #141312, #14131200), url("/images/ferryterminal_05.jpg");
         background-repeat: no-repeat;
     }
 
-    /* .subway-bg {
-        background-image: linear-gradient(45deg, #141312, rgba(20, 19, 18, 0)), url("/images/ferryterminal_05.jpg");
+    .server-browser-hero {
+        background-image: linear-gradient(45deg, #141312, #14131200 75%), url("/images/satdish.jpg");
         background-repeat: no-repeat;
-    } */
+        background-position: 0% 65%;
+    }
+
+    label {
+        display: block;
+    }
+
+    input::placeholder {
+        color: #a3a3a3;
+    }
 }

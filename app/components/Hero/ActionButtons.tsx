@@ -1,16 +1,15 @@
 "use client";
-import { toggleGroupModal } from "@/app/redux/features/uiSlice";
+import { ModalContext } from "@/app/context/ModalContext";
 import { motion, useInView, MotionProps } from "framer-motion";
 import { useRouter } from "next/navigation";
-import { useRef } from "react";
-import { useDispatch } from "react-redux";
+import { useContext, useRef } from "react";
 
 const ActionButtons = () => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
 
     const { push } = useRouter();
-    const dispatch = useDispatch();
+    const { toggleModal } = useContext(ModalContext);
 
     const animationProps: MotionProps = {
         initial: { opacity: 0, x: -50 },
@@ -21,7 +20,7 @@ const ActionButtons = () => {
     return (
         <motion.div ref={ref} {...animationProps} className="flex justify-center gap-10 mt-8">
             <button
-                onClick={() => dispatch(toggleGroupModal())}
+                onClick={toggleModal}
                 className="font-bebas bg-orange-700 text-white px-5 text-2xl py-3 hover:scale-105"
             >
                 By Group Size
