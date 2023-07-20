@@ -4,19 +4,21 @@ interface FiltersState {
     searchQuery: string;
     minPlayers: number;
     maxPlayers: number;
-    page: number;
     countries: string[];
     serverTypes: string[];
     sortBy: string;
+    nextPageUrl: string;
+    prevPageUrl: string;
 }
 
 const initialState: FiltersState = {
     searchQuery: "",
     minPlayers: 0,
     maxPlayers: 0,
-    page: 1,
     countries: [],
     serverTypes: [],
+    nextPageUrl: "",
+    prevPageUrl: "",
     sortBy: "",
 };
 
@@ -33,12 +35,6 @@ export const filterSlice = createSlice({
         setMaxPlayers: (state, action: PayloadAction<number>) => {
             state.maxPlayers = action.payload;
         },
-        incrementPage: (state) => {
-            state.page += 1;
-        },
-        decrementPage: (state) => {
-            state.page = Math.max(state.page - 1, 1);
-        },
         resetFilters: () => initialState,
         setCountries: (state, action: PayloadAction<string[]>) => {
             state.countries = [...action.payload];
@@ -49,6 +45,12 @@ export const filterSlice = createSlice({
         setSortBy: (state, action: PayloadAction<string>) => {
             state.sortBy = action.payload;
         },
+        setPrevPageUrl: (state, action: PayloadAction<string>) => {
+            state.prevPageUrl = action.payload;
+        },
+        setNextPageUrl: (state, action: PayloadAction<string>) => {
+            state.nextPageUrl = action.payload;
+        },
     },
 });
 
@@ -56,10 +58,10 @@ export const {
     setSearchQuery,
     setMinPlayers,
     setMaxPlayers,
-    incrementPage,
-    decrementPage,
     resetFilters,
     setCountries,
     setServerTypes,
     setSortBy,
+    setNextPageUrl,
+    setPrevPageUrl,
 } = filterSlice.actions;

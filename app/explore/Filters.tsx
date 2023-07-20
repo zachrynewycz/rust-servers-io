@@ -81,7 +81,7 @@ const Filters = () => {
             </div>
 
             <button
-                onClick={updateServerResults}
+                onClick={() => updateServerResults()}
                 className="font-bebas text-xl bg-orange-800 px-4 py-1 absolute bottom-6 tracking-wide hover:bg-orange-900"
             >
                 search
