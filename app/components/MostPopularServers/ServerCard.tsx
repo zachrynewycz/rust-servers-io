@@ -22,13 +22,13 @@ const ServerCard = ({ data, index }: IServerCardProps) => {
         <motion.div
             {...animationProps}
             ref={ref}
-            className="bg-[#1f1f1f] px-8 py-4 text-stone-200 cursor-pointer flex flex-col justify-around h-64 border-neutral-800"
+            className="bg-[#1f1f1f] px-8 py-10 text-stone-200 cursor-pointer h-64 border-neutral-800 relative"
         >
-            <h1 className="font-bebas font-bold text-5xl ">
+            <h1 className="font-bebas font-bold text-5xl">
                 {data.attributes.players} / {data.attributes.maxPlayers}
             </h1>
 
-            <div>
+            <div className="absolute  bottom-10">
                 <h2 className="font-open_semi">{data.attributes.name}</h2>
 
                 <div className="flex items-center gap-2 mt-3 bg-orange-800 w-fit px-3 rounded-full">

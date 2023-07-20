@@ -2,15 +2,18 @@
 import { RootState } from "@/app/redux/store";
 import { useSelector } from "react-redux";
 import ServerCard from "./ServerCard";
+import Loading from "./Loading";
 
 const ServerList = () => {
     const servers = useSelector((state: RootState) => state.servers.rustServerData);
-    console.log(servers);
+
+    if (!servers || !servers.length) return <Loading />;
+
     return (
-        <table className="max-w-5xl mx-auto text-stone-200">
+        <table className="max-w-5xl mx-auto text-stone-200 w-full">
             <thead className="font-gilroy_bold">
-                <tr className="grid grid-cols-8 text-left">
-                    <th className="col-span-5 ml-5">Name</th>
+                <tr className="grid grid-cols-9 text-left px-5">
+                    <th className="col-span-6 ml-5">Name</th>
                     <th>Players</th>
                     <th>Last wiped</th>
                     <th>Location</th>

@@ -6,9 +6,11 @@ const Pagination = () => {
     const dispatch = useDispatch();
 
     return (
-        <div className="text-center">
-            <button onClick={() => dispatch(decrementPage())}>Prev</button>
-            <button onClick={() => dispatch(incrementPage())}>Next</button>
+        <div className="text-center my-10 text-stone-200 font-bebas text-2xl">
+            <button onClick={() => dispatch(decrementPage())}>back</button>
+            <button className="ml-14" onClick={() => dispatch(incrementPage())}>
+                Next
+            </button>
         </div>
     );
 };

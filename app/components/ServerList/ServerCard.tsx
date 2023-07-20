@@ -6,13 +6,22 @@ interface IServerCardProps {
 
 const ServerCard = ({ data }: IServerCardProps) => {
     return (
-        <tr className="grid grid-cols-8 bg-neutral-800 mt-4 p-5">
-            <td className="col-span-5 font-gilroy_bold">{data.name}</td>
+        <tr className="grid grid-cols-9 bg-[#1d1d1d] mt-3 py-3 px-8 hover:bg-neutral-700 cursor-pointer items-center">
+            <td className="col-span-6 font-gilroy_bold tracking-wider pr-10 text-sm">
+                {data.name}
+                <br />
+                <span className="font-sans text-neutral-400 text-xs">{data.details.map}</span>
+            </td>
             <td>
                 {data.players} / {data.maxPlayers}
             </td>
             <td>{formatWipeDate(data.details.rust_last_wipe)}</td>
-            <td className="text-center">{data.country}</td>
+            <td className="mx-auto">
+                <img
+                    className="w-6"
+                    src={`http://purecatamphetamine.github.io/country-flag-icons/3x2/${data.country}.svg`}
+                />
+            </td>
         </tr>
     );
 };

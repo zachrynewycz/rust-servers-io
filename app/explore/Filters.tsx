@@ -1,8 +1,9 @@
 "use client";
-import { countries } from "../assets/countryData";
+import { useEffect } from "react";
 
 import Multiselect from "multiselect-react-dropdown";
 import { multiSelectStyle } from "../styles/multiselect";
+import { countries } from "../assets/countryData";
 
 import { useDispatch } from "react-redux";
 import { setCountries, setMaxPlayers, setMinPlayers, setSearchQuery, setServerTypes } from "../redux/slices/filters";
@@ -11,8 +12,12 @@ import { updateServerResults } from "../utils/updateServerResults";
 const Filters = () => {
     const dispatch = useDispatch();
 
+    useEffect(() => {
+        updateServerResults();
+    }, []);
+
     return (
-        <div className="mx-auto bg-neutral-800 max-w-5xl pt-4 pb-20 px-8 my-10 text-stone-200 font-gilroy_bold flex items-center gap-10 relative flex-wrap">
+        <div className="mx-auto bg-[#1d1d1d] max-w-5xl pt-4 pb-20 px-8 my-10 text-stone-200 font-gilroy_bold flex items-center gap-10 relative flex-wrap">
             <div>
                 <label htmlFor="searchQuery">Search</label>
                 <input

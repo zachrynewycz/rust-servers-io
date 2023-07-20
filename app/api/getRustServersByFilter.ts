@@ -3,7 +3,7 @@ export default async function getRustServersByFilter(filters?: any): Promise<any
         "filter[game]": "rust",
         "filter[status]": "online",
         sort: filters.sortBy || "rank",
-        "page[size]": "20",
+        "page[size]": "13",
         "filter[search]": filters.searchQuery,
         "filter[players][max]": filters.maxPlayers || 2000,
         "filter[players][min]": filters.minPlayers,
