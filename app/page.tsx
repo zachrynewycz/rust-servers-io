@@ -1,3 +1,4 @@
+import ConcurrentPlayers from "./components/ConcurrentPlayers/ConcurrentPlayers";
 import GroupSizeModal from "./components/GroupSizeModal/GroupSizeModal";
 import Hero from "./components/Hero/Hero";
 import MostPopularServers from "./components/MostPopularServers/MostPopularServers";
@@ -9,6 +10,7 @@ export default function Home() {
             <Nav />
             <Hero />
             <MostPopularServers />
+            <ConcurrentPlayers />
             <GroupSizeModal />
         </main>
     );

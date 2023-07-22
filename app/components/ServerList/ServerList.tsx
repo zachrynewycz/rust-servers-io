@@ -12,7 +12,7 @@ const ServerList = () => {
     return (
         <table className="max-w-5xl mx-auto text-stone-200 w-full">
             <thead className="font-gilroy_bold">
-                <tr className="grid grid-cols-9 text-left px-5">
+                <tr className="md:grid grid-cols-9 text-left px-5 hidden">
                     <th className="col-span-6 ml-5">Name</th>
                     <th>Players</th>
                     <th>Last wiped</th>

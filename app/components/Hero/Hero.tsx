@@ -14,9 +14,9 @@ const Hero = () => {
     };
 
     return (
-        <div className="subway-bg py-56 text-center ">
+        <div className="subway-bg py-56 text-center min-w-[350px]">
             <motion.div ref={ref} {...animationProps}>
-                <h1 className="font-bebas text-9xl text-stone-100">
+                <h1 className="font-bebas text-7xl md:text-9xl text-stone-100">
                     Your rust <br />
                     server awaits
                 </h1>

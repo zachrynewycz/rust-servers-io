@@ -6,7 +6,7 @@ interface IServerCardProps {
 
 const ServerCard = ({ data }: IServerCardProps) => {
     return (
-        <tr className="grid grid-cols-9 bg-[#1d1d1d] mt-3 py-3 px-8 hover:bg-neutral-700 cursor-pointer items-center">
+        <tr className="grid md:grid-cols-9 bg-[#1d1d1d] mt-3 py-3 px-8 hover:bg-neutral-700 cursor-pointer items-center min-w-[450px]">
             <td className="col-span-6 font-gilroy_bold tracking-wider pr-10 text-sm">
                 {data.name}
                 <br />

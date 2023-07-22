@@ -1,3 +1,4 @@
+import { countryCodes } from "@/app/assets/countryData";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface FiltersState {
@@ -37,7 +38,7 @@ export const filterSlice = createSlice({
         },
         resetFilters: () => initialState,
         setCountries: (state, action: PayloadAction<string[]>) => {
-            state.countries = [...action.payload];
+            state.countries = action.payload.map((country) => countryCodes[country]);
         },
         setServerTypes: (state, action: PayloadAction<string[]>) => {
             state.serverTypes = [...action.payload];

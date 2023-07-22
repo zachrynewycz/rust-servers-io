@@ -3,7 +3,7 @@ import { useEffect } from "react";
 
 import Multiselect from "multiselect-react-dropdown";
 import { multiSelectStyle } from "../styles/multiselect";
-import { countries } from "../assets/countryData";
+import { countryNames } from "../assets/countryData";
 
 import { useDispatch } from "react-redux";
 import { setCountries, setMaxPlayers, setMinPlayers, setSearchQuery, setServerTypes } from "../redux/slices/filters";
@@ -47,10 +47,10 @@ const Filters = () => {
             </div>
 
             <div>
-                <label htmlFor="minValue">Country</label>
+                <label>Country</label>
                 <Multiselect
-                    options={countries}
-                    displayValue="name"
+                    options={countryNames}
+                    isObject={false}
                     showArrow
                     showCheckbox
                     hideSelectedList
@@ -64,11 +64,10 @@ const Filters = () => {
             </div>
 
             <div>
-                <label htmlFor="minValue">Type</label>
+                <label>Type</label>
                 <Multiselect
                     options={["Offical", "Community", "Modded"]}
                     isObject={false}
-                    displayValue="name"
                     showArrow
                     onSelect={(items) => dispatch(setServerTypes(items))}
                     onRemove={(items) => dispatch(setCountries(items))}
