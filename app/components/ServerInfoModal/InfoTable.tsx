@@ -3,7 +3,7 @@ import { formatWipeDate } from "@/app/utils/formatWipeDate";
 
 const InfoTable = ({ data }: any) => {
     return (
-        <div className="grid grid-cols-3 gap-8 server-info-table my-7">
+        <div className="grid grid-cols-3 gap-5 server-info-table my-7">
             <div>
                 <h3 className="text-neutral-300">Player count</h3>
                 <h1>
@@ -35,14 +35,17 @@ const InfoTable = ({ data }: any) => {
                 <h3>Last wipe</h3>
                 <h1>{formatWipeDate(data.details.rust_last_wipe)}</h1>
             </div>
-            <div>
-                <h3>Website</h3>
-                <h1>
-                    <a className="underline" href={data.details.rust_url}>
-                        {data.details.rust_url}
-                    </a>
-                </h1>
-            </div>
+
+            {data.details.rust_url && (
+                <div>
+                    <h3>Website</h3>
+                    <h1>
+                        <a className="underline" href={data.details.rust_url}>
+                            {data.details.rust_url.slice(0, 25)}
+                        </a>
+                    </h1>
+                </div>
+            )}
             <div>
                 <h3>Offical server</h3>
                 <h1>{data.details.official ? "True" : "False"}</h1>

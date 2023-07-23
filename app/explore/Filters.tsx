@@ -6,7 +6,14 @@ import { multiSelectStyle } from "../styles/multiselect";
 import { countryNames } from "../assets/countryData";
 
 import { useDispatch } from "react-redux";
-import { setCountries, setMaxPlayers, setMinPlayers, setSearchQuery, setServerTypes } from "../redux/slices/filters";
+import {
+    resetFilters,
+    setCountries,
+    setMaxPlayers,
+    setMinPlayers,
+    setSearchQuery,
+    setServerTypes,
+} from "../redux/slices/filters";
 import { updateServerResults } from "../utils/updateServerResults";
 
 const Filters = () => {
@@ -58,7 +65,6 @@ const Filters = () => {
                     onSelect={(items) => dispatch(setCountries(items))}
                     onRemove={(items) => dispatch(setCountries(items))}
                     avoidHighlightFirstOption={true}
-                    placeholder=""
                     style={multiSelectStyle}
                 />
             </div>
@@ -74,7 +80,6 @@ const Filters = () => {
                     avoidHighlightFirstOption={true}
                     hideSelectedList
                     showCheckbox
-                    placeholder=""
                     style={multiSelectStyle}
                 />
             </div>
@@ -84,6 +89,16 @@ const Filters = () => {
                 className="font-bebas text-xl bg-orange-800 px-4 py-1 absolute bottom-6 tracking-wide hover:bg-orange-900"
             >
                 search
+            </button>
+
+            <button
+                onClick={() => {
+                    dispatch(resetFilters());
+                    updateServerResults();
+                }}
+                className="font-bebas text-xl absolute bottom-6 left-36 tracking-wide py-1 text-neutral-500 hover:text-neutral-400"
+            >
+                clear
             </button>
         </div>
     );
