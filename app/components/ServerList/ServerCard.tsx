@@ -1,12 +1,22 @@
+"use client";
+import { toggleIsServerInfoModalOpen } from "@/app/redux/slices/modal";
+import { setSelectedServer } from "@/app/redux/slices/servers";
 import { formatWipeDate } from "@/app/utils/formatWipeDate";
+import { useDispatch } from "react-redux";
 
-interface IServerCardProps {
-    data: any;
-}
+const ServerCard = ({ data }: any) => {
+    const dispatch = useDispatch();
 
-const ServerCard = ({ data }: IServerCardProps) => {
+    const handleCardClick = () => {
+        dispatch(setSelectedServer(data));
+        dispatch(toggleIsServerInfoModalOpen());
+    };
+
     return (
-        <tr className="grid md:grid-cols-9 bg-[#1d1d1d] mt-3 py-3 px-8 hover:bg-neutral-700 cursor-pointer items-center min-w-[450px]">
+        <tr
+            onClick={handleCardClick}
+            className="grid md:grid-cols-9 bg-[#1d1d1d] mt-3 py-3 px-8 hover:bg-neutral-700 cursor-pointer items-center min-w-[450px]"
+        >
             <td className="col-span-6 font-gilroy_bold tracking-wider pr-10 text-sm">
                 {data.name}
                 <br />

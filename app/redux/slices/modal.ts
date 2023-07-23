@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     isModalOpen: false,
+    isServerInfoModalOpen: false,
 };
 
 export const modalSlice = createSlice({
@@ -11,7 +12,10 @@ export const modalSlice = createSlice({
         toggleModal: (state) => {
             state.isModalOpen = !state.isModalOpen;
         },
+        toggleIsServerInfoModalOpen: (state) => {
+            state.isServerInfoModalOpen = !state.isServerInfoModalOpen;
+        },
     },
 });
 
-export const { toggleModal } = modalSlice.actions;
+export const { toggleModal, toggleIsServerInfoModalOpen } = modalSlice.actions;

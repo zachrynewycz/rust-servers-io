@@ -2,10 +2,12 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 interface IServerState {
     rustServerData: any[];
+    selectedServer: any;
 }
 
 const initialState: IServerState = {
     rustServerData: [],
+    selectedServer: {},
 };
 
 export const serversSlice = createSlice({
@@ -15,7 +17,10 @@ export const serversSlice = createSlice({
         setRustServerData: (state, action: PayloadAction<any>) => {
             state.rustServerData = action.payload;
         },
+        setSelectedServer: (state, action: PayloadAction<any>) => {
+            state.selectedServer = action.payload;
+        },
     },
 });
 
-export const { setRustServerData } = serversSlice.actions;
+export const { setRustServerData, setSelectedServer } = serversSlice.actions;

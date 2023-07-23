@@ -42,7 +42,13 @@
         color: #a3a3a3;
     }
 
-    th {
-        cursor: pointer;
+    .server-info-table div > h3 {
+        color: #d4d4d4;
+        margin-bottom: 5px;
+    }
+
+    .server-info-table div > h1 {
+        color: white;
+        font-family: open-regular;
     }
 }

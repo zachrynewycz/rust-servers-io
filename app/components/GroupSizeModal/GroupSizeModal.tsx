@@ -18,7 +18,7 @@ const GroupSizeModal = () => {
         <>
             {isModalOpen && (
                 <div className="fixed inset-0 flex items-center justify-center">
-                    <div className="absolute inset-0 bg-black opacity-40"></div>
+                    <div className="absolute inset-0 bg-black opacity-40" />
 
                     <div className="relative px-10 bg-white rounded-xl py-5">
                         <h1 className="font-gilroy_bold text-3xl text-neutral-800">Choose Group Size</h1>
@@ -34,10 +34,11 @@ const GroupSizeModal = () => {
                             </button>
                         ))}
 
-                        <div className="flex justify-evenly font-bebas text-2xl text-neutral-800 mt-5">
+                        <div className="flex justify-evenly font-bebas text-2xl mt-5">
                             <button onClick={() => dispatch(toggleModal())} className="text-neutral-700">
                                 Close
                             </button>
+
                             <button
                                 disabled={!selectedGroupSize}
                                 onClick={() => {

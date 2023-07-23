@@ -31,7 +31,7 @@ const ServerCard = ({ data, index }: IServerCardProps) => {
             <div className="absolute  bottom-10">
                 <h2 className="font-open_semi">{data.attributes.name}</h2>
 
-                <div className="flex items-center gap-2 mt-3 bg-orange-800 w-fit px-3 rounded-full">
+                <div className="flex items-center gap-2 mt-3 bg-orange-800 w-fit px-3 py-0.5">
                     <img src="/images/icons/refresh-cw.svg" className="w-4" />
                     <p className="font-bebas text-lg">{formatWipeDate(data.attributes.details.rust_last_wipe)}</p>
                 </div>
