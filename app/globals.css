@@ -20,7 +20,7 @@
 
     @font-face {
         font-family: gilroy;
-        src: url("/fonts/GILROY-BOLD.ttf");
+        src: url("/fonts/gilroy.ttf");
     }
 
     .subway-bg {
