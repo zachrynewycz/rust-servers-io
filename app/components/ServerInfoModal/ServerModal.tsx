@@ -3,7 +3,7 @@ import { toggleIsServerInfoModalOpen } from "@/app/redux/slices/modal";
 import { RootState } from "@/app/redux/store";
 import { useDispatch, useSelector } from "react-redux";
 import InfoTable from "./InfoTable";
-import MapStats from "./MapStats";
+import RustMapDetails from "./RustMapDetails";
 
 const ServerModal = () => {
     const dispatch = useDispatch();
@@ -17,14 +17,15 @@ const ServerModal = () => {
                     <div className="absolute inset-0 bg-black opacity-40" />
 
                     <div className="relative bg-neutral-800 px-10 py-5 rounded-lg text-stone-200">
-                        <h1 className="font-gilroy_bold text-3xl mb-2 max-w-xl">{server.name}</h1>
-                        <hr className=" border-neutral-500" />
+                        <h1 className="font-gilroy_bold text-3xl max-w-xl">{server.name}</h1>
 
+                        <hr className=" border-neutral-500 my-5" />
                         <InfoTable data={server} />
-                        <MapStats data={server} />
+                        <hr className=" border-neutral-500 my-5" />
+                        <RustMapDetails data={server} />
 
                         <button
-                            className="mx-auto w-full mt-3 font-bebas text-neutral-400 text-2xl tracking-wide"
+                            className="text-center w-full mt-5 font-bebas text-neutral-400 text-2xl tracking-wide"
                             onClick={() => dispatch(toggleIsServerInfoModalOpen())}
                         >
                             CLOSE

@@ -2,23 +2,29 @@ import { formatUptime } from "@/app/utils/formatUptime";
 import { formatWipeDate } from "@/app/utils/formatWipeDate";
 
 const InfoTable = ({ data }: any) => {
+    const copyToClipboard = () => {
+        navigator.clipboard.writeText(data.ip);
+    };
+
     return (
-        <div className="grid grid-cols-3 gap-5 server-info-table my-7">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-x-7 gap-y-4 server-info-table my-7">
             <div>
                 <h3 className="text-neutral-300">Player count</h3>
                 <h1>
                     {data.players} / {data.maxPlayers}
                 </h1>
             </div>
-            <div>
-                <h3>IP Address</h3>
+            <div className="cursor-pointer" onClick={copyToClipboard}>
+                <h3>
+                    IP Address <img className="inline-block w-4 ml-2 mb-1" src="/images/icons/copy.svg" />
+                </h3>
                 <h1>{data.ip}</h1>
             </div>
             <div>
                 <h3>Country</h3>
                 <h1>
                     <img
-                        className="w-8"
+                        className="w-7"
                         src={`http://purecatamphetamine.github.io/country-flag-icons/3x2/${data.country}.svg`}
                     />
                 </h1>
