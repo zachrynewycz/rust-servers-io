@@ -1,34 +1,21 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# rust-servers-io
 
-## Getting Started
+Server browser for the renowned Steam game 'Rust' created by Facepunch. Seamlessly search and discover servers for your group, simplifying the process of finding the right server with convenience.
 
-First, run the development server:
+Live demo: https://rust-servers-io.vercel.app/
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**Client:** React, Redux, TailwindCSS, Typescript, NextJS
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+**Additional Libraries:** Date-fns, Framer Motion, react-spinners, multiselect-dropdown
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## Screenshots
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![1](https://github.com/zachrynewycz/rust-servers-io/assets/85086293/281a92f0-9740-4b5e-95ab-6a6b53233c9c)
+![2](https://github.com/zachrynewycz/rust-servers-io/assets/85086293/78387637-706a-4062-aaa5-6ee3836951e1)
+![3](https://github.com/zachrynewycz/rust-servers-io/assets/85086293/67407cc3-066e-4fcb-8dfc-5dfde7895b55)
+![4](https://github.com/zachrynewycz/rust-servers-io/assets/85086293/11bc6a27-fb41-4bb0-add8-d50e61b1866a)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
