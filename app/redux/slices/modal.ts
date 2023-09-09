@@ -12,10 +12,10 @@ export const modalSlice = createSlice({
         toggleModal: (state) => {
             state.isModalOpen = !state.isModalOpen;
         },
-        toggleIsServerInfoModalOpen: (state) => {
+        toggleIsServerModalOpen: (state) => {
             state.isServerInfoModalOpen = !state.isServerInfoModalOpen;
         },
     },
 });
 
-export const { toggleModal, toggleIsServerInfoModalOpen } = modalSlice.actions;
+export const { toggleModal, toggleIsServerModalOpen } = modalSlice.actions;

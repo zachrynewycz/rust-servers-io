@@ -1,5 +1,5 @@
 "use client";
-import { toggleIsServerInfoModalOpen } from "@/app/redux/slices/modal";
+import { toggleIsServerModalOpen } from "@/app/redux/slices/modal";
 import { RootState } from "@/app/redux/store";
 import { useDispatch, useSelector } from "react-redux";
 import InfoTable from "./InfoTable";
@@ -26,7 +26,7 @@ const ServerModal = () => {
 
                         <button
                             className="text-center w-full mt-5 font-bebas text-neutral-400 text-2xl tracking-wide"
-                            onClick={() => dispatch(toggleIsServerInfoModalOpen())}
+                            onClick={() => dispatch(toggleIsServerModalOpen())}
                         >
                             CLOSE
                         </button>

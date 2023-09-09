@@ -1,5 +1,5 @@
 "use client";
-import { toggleIsServerInfoModalOpen } from "@/app/redux/slices/modal";
+import { toggleIsServerModalOpen } from "@/app/redux/slices/modal";
 import { setSelectedServer } from "@/app/redux/slices/servers";
 import { formatWipeDate } from "@/app/utils/formatWipeDate";
 import { useDispatch } from "react-redux";
@@ -9,7 +9,7 @@ const ServerCard = ({ data }: any) => {
 
     const handleCardClick = () => {
         dispatch(setSelectedServer(data));
-        dispatch(toggleIsServerInfoModalOpen());
+        dispatch(toggleIsServerModalOpen());
     };
 
     return (
