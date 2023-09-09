@@ -1,9 +1,9 @@
 "use client";
-import { Provider } from "react-redux";
-import Footer from "./components/Footer/footer";
 import "./globals.css";
+import { Provider } from "react-redux";
 import type { Metadata } from "next";
 import { store } from "./redux/store";
+import Footer from "./components/Footer/footer";
 
 const metadata: Metadata = {
     title: "rustservers.io",

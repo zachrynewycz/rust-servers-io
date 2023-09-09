@@ -30,6 +30,7 @@ const ServerCard = ({ data }: any) => {
                 <img
                     className="w-6"
                     src={`http://purecatamphetamine.github.io/country-flag-icons/3x2/${data.country}.svg`}
+                    alt="country"
                 />
             </td>
         </tr>

@@ -7,13 +7,13 @@ import ServerBrowserHero from "./ServerBrowserHero";
 
 export default function Explore() {
     return (
-        <main>
+        <>
             <Nav />
             <ServerBrowserHero />
             <Filters />
             <ServerList />
             <Pagination />
             <ServerModal />
-        </main>
+        </>
     );
 }

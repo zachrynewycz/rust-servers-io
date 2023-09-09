@@ -28,11 +28,11 @@ const ServerCard = ({ data, index }: IServerCardProps) => {
                 {data.attributes.players} / {data.attributes.maxPlayers}
             </h1>
 
-            <div className="absolute  bottom-10">
+            <div className="absolute bottom-10">
                 <h2 className="font-open_semi">{data.attributes.name}</h2>
 
                 <div className="flex items-center gap-2 mt-3 bg-orange-800 w-fit px-3 py-0.5">
-                    <img src="/images/icons/refresh-cw.svg" className="w-4" />
+                    <img src="/images/icons/refresh-cw.svg" className="w-4" alt="refresh"/>
                     <p className="font-bebas text-lg">{formatWipeDate(data.attributes.details.rust_last_wipe)}</p>
                 </div>
             </div>
